@@ -24,6 +24,6 @@ model Project {
   id String @id @default(uuid()) @map("_id")
   projectType String?
   projectName String?
-  sf Int?
+  sf String?
   createdAt DateTime @default(now())
 }

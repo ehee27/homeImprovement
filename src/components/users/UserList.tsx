@@ -18,7 +18,7 @@ const UserList = async () => {
   const userList = await getData();
   console.log("This.......", userList);
   return (
-    <div className="p-3 rounded-md">
+    <div className="shadow-inner shadow-zinc-400 p-3 rounded-md bg-white">
       {userList?.map((user, i) => (
         <div
           key={user.id}
