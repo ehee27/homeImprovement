@@ -17,7 +17,7 @@ const CreateProject = () => {
           />
           <Input name="project name" type="text" placeholder="Project name" />
           <Input name="sf" type="number" placeholder="How many square feet?" />
-          <Button type="submit" text="Create" />
+          <Button type="submit" text="Create" bgColor="bg-zinc-300" />
         </div>
       </Form>
     </div>

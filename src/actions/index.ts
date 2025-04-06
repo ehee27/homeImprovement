@@ -18,6 +18,16 @@ export const createUser = async (formData: FormData) => {
   revalidatePath("/");
 };
 
+export const deleteUser = async (formData: FormData) => {
+  const inputId = formData.get("inputId") as string;
+  await prisma.user.delete({
+    where: {
+      id: inputId,
+    },
+  });
+  revalidatePath("/");
+};
+
 ////////////////////// PROJECTS ////////////////////////////////////////
 export const createProject = async (formData: FormData) => {
   const projectType = formData.get("project type") as string;
@@ -38,5 +48,15 @@ export const createProject = async (formData: FormData) => {
     },
   });
 
+  revalidatePath("/");
+};
+
+export const deleteProject = async (formData: FormData) => {
+  const inputId = formData.get("inputId") as string;
+  await prisma.project.delete({
+    where: {
+      id: inputId,
+    },
+  });
   revalidatePath("/");
 };

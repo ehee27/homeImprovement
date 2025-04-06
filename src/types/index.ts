@@ -15,6 +15,16 @@ export interface InputProps {
 
 export interface ButtonProps {
   type?: "button" | "submit" | "reset";
-  text?: string | ReactNode;
+  text?: string;
   onClick?: () => void;
+  actionButton?: boolean;
+  bgColor?: string;
+}
+
+export interface UserProps {
+  id: string;
+}
+
+export interface ProjectProps {
+  id: string;
 }

@@ -12,7 +12,7 @@ const CreateUser = () => {
         <div className="p-2">
           <Input name="fullName" type="text" placeholder="User full name" />
           <Input name="email" type="text" placeholder="User email" />
-          <Button type="submit" text="Create" />
+          <Button type="submit" text="Create" bgColor="bg-zinc-300" />
         </div>
       </Form>
     </div>

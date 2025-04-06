@@ -1,4 +1,5 @@
 import { prisma } from "@/utils/prisma";
+import DeleteProject from "./DeleteProject";
 
 export const getData = async () => {
   const data = await prisma.project.findMany({
@@ -17,7 +18,7 @@ export const getData = async () => {
 
 const ProjectList = async () => {
   const projectList = await getData();
-  console.log("This.......", projectList);
+  // console.log("This.......", projectList);
   return (
     <div className="shadow-inner shadow-zinc-400 p-3 rounded-md bg-white">
       {projectList?.map((project, i) => (
@@ -29,6 +30,7 @@ const ProjectList = async () => {
           <p>{project.projectType}</p>
           <p>{project.createdAt.toDateString()}</p>
           <p className="text-xs">{project.id}</p>
+          <DeleteProject project={project} />
         </div>
       ))}
     </div>

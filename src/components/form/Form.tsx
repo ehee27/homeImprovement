@@ -5,9 +5,16 @@ import { useRef } from "react";
 
 const Form = ({ children, action }: FormProps) => {
   const ref = useRef<HTMLFormElement>(null);
+
   return (
     <div>
-      <form action={action} ref={ref}>
+      <form
+        action={async (formData) => {
+          await action(formData);
+          ref.current?.reset();
+        }}
+        ref={ref}
+      >
         {children}
       </form>
     </div>
